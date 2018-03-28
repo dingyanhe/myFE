@@ -1,4 +1,4 @@
-引自[这里](https://juejin.im/entry/59478ce8a0bb9f006bda9756)
+引自[这里](https://juejin.im/entry/59478ce8a0bb9f006bda9756 "掘金社区")
 
 #### BFC的定义
 　　BFC(Block formatting context)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
