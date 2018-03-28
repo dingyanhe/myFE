@@ -1,2 +1,3 @@
-# myFE
-我的前端学习代码
+# 我的前端阅读
+
+[BFC的规则以及演示](https://github.com/dingyanhe/myFE/master/BFC的规则以及示例.md)
