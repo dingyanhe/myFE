@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<!-- 第一种：浮动到兄弟元素(main)的上面，box重叠 -->
+	<style>
+	    body {
+	        width: 300px;
+	        position: relative;
+	    }
+
+	    .aside {
+	        width: 100px;
+	        height: 150px;
+	        float: left;
+	        background: #f66;
+	    }
+
+	    .main {
+	        height: 200px;
+	        background: #fcc;
+	    }
+	</style>
+<body>
+    <div class="aside"></div>
+    <div class="main"></div>
+</body>
+<!-- 解决方法：让兄弟元素（main）BFC化，加一个overflow:hidden; -->
+<!-- 应用规则：BFC的区域不会与float box重叠。 -->
+
+
+
+
+<!-- 第二种：父元素(par)高度塌陷，清除内部浮动，浮动元素没有参与高度计算 -->
+<!-- <style>
+    .par {
+        border: 5px solid #fcc;
+        width: 300px;
+    }
+
+    .child {
+        border: 5px solid #f66;
+        width:100px;
+        height: 100px;
+        float: left;
+    }
+</style>
+<body>
+    <div class="par">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+</body> -->
+<!-- 解决方法：让父元素（par）BFC化，加一个overflow:hidden; -->
+<!-- 应用规则：计算BFC的高度时，浮动元素也参与计算 -->
+
+
+<!-- 第三种：防止垂直 margin 重叠，Box垂直方向的距离由margin决定。 -->
+<!-- <style>
+    p {
+        color: #f55;
+        background: #fcc;
+        width: 200px;
+        line-height: 100px;
+        text-align:center;
+        margin: 100px;
+    }
+    .wrap {
+	    overflow: hidden;
+    }
+</style>
+<body>
+	<p>Haha</p>
+	<p>Haha</p>
+	<div class="wrap">
+	    <p>Haha</p>
+	</div>
+	<div class="wrap">
+	    <p>Hehe</p>
+	</div>
+</body> -->
+<!-- 解决方法：添加一个BFC容器包裹元素，包裹元素使用overflow:hidden;BFC化 -->
+<!-- 应用规则：属于同一个BFC的两个相邻Box的margin会发生重叠 -->
+</html>
