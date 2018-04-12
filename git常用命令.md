@@ -50,25 +50,26 @@ git merge 分支名
 git merge --no-ff 分支名
 ```
 
-### 回退到上一次提交（基于当前的commit）
-```
-git reset --hard HEAD^
-```
+### 回滚提交
+在需要回滚一次或多次提交时可以用这个命令。由于该命令比较危险，建议用于已经把最新提交推送到远程仓库
 
-### 回退到上上一次提交（都是基于当前的commit）
-```
-git reset --hard HEAD^^
-```
+* git reset HEAD [filename] 
 
-### 回退到当前分支上的前n次（从当前commit往前n次）的提交
-```
-git reset --hard HEAD~n
-```
+> 把已在暂时区的文件取消，恢复到已修改未暂存状态。
+  
+* git reset HEAD~[n]
 
-### 回退到指定commit
-```
-git reset --hard commit信息的前几位
-```
+> 表示回退到n个提交之前。同时，它也可以用来合并提交。下面的写法与git commit --amend结果是一样的。
+  
+  ```
+  git reset HEAD~2
+  git commit
+  ```
+
+* 三种参数
+> git reset --hard [commitID]，改引用，改暂存区，改工作区与引用指向的目录一致。    
+> git reset --soft [commitID]，只更改引用的指向，不改变暂存区和工作区。       
+> git reset --mixed [commitID]或git reset [commitID](默认)，更改引用的指向及重置暂存区，但是不改变工作区       
 
 ### 修改分支名
 ```
@@ -188,3 +189,11 @@ git log：
       tmp
 
 ```
+
+### 覆盖commit日志，合并提交
+```
+git commit --amend
+```
+最常见的用法是上次提交信息写错了，或者提交多了或者漏了，重新提交覆盖上一次提交。
+其实他还有一个用法，就是用来合并提交。例如上次提交的修改并不完全，再作修改之后就可以用该名命令把上次提交合并在一起。‘
+
