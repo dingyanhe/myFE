@@ -84,7 +84,7 @@ git merge --no-ff 分支名
 * 三种参数
 > git reset --hard [commitID]，改引用，改暂存区，改工作区与引用指向的目录一致。    
 > git reset --soft [commitID]，只更改引用的指向，不改变暂存区和工作区。    
-> git reset --mixed [commitID]或git reset [commitID](默认)，更改引用的指向及重置暂存区，但是不改变工作区。           
+> git reset --mixed [commitID]或git reset [commitID]（默认），更改引用的指向及重置暂存区，但是不改变工作区。           
 
 ### 储藏
  经常有这样的事情发生，当你正在进行项目中某一部分的工作，里面的东西处于一个比较杂乱的状态，而你想转到其他分支上进行一些工作。问题是，你不想提交进行了一半的工作，否则以后你无法回到这个工作点。解决这个问题的办法就是git stash命令。
