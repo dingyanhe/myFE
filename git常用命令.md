@@ -44,7 +44,14 @@ git branch -v
   注意：`--no-ff`是不快速合并的意思
 
 * git merge 与git merge --no-ff的区别？
-  已`master`合并`release`分支为例，合并release后，merge形式的合并在master上会作为一个commit（即与master一条线）![merge](./file/merge.png)，但是`--no-ff`形式的合并在master上不会作为一个commit（即不与master一条线），但会产生新的合并点。![merge](./file/mergeNoFF.png)
+
+  已`master`合并`release`分支为例，合并release后，merge形式的合并在master上会作为一个commit（即与master一条线）
+  
+  ![merge](./file/merge.png)
+  
+  但是`--no-ff`形式的合并在master上不会作为一个commit（即不与master一条线），但会产生新的合并点。
+  
+  ![merge](./file/mergeNoFF.png)
 
 ### 将分支合并到当前分支
 ```
