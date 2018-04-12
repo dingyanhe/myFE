@@ -53,15 +53,17 @@ git branch -v
   
   ![mergeNoFF](./file/mergeNoFF.png)
 
-### 将分支合并到当前分支
+> 将分支合并到当前分支
 ```
 git merge 分支名
 ```
 
-### 禁用fast-forward（快进），会多一个commit id
+> 禁用fast-forward（快进），会多一个commit id
 ```
 git merge --no-ff 分支名
 ```
+
+
 
 ### 回滚提交
 在需要回滚一次或多次提交时可以用这个命令。由于该命令比较危险，建议用于已经把最新提交推送到远程仓库
