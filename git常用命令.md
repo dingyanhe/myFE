@@ -83,8 +83,8 @@ git merge --no-ff 分支名
 
 * 三种参数
 > git reset --hard [commitID]，改引用，改暂存区，改工作区与引用指向的目录一致。    
-> git reset --soft [commitID]，只更改引用的指向，不改变暂存区和工作区。       
-> git reset --mixed [commitID]或git reset [commitID](默认)，更改引用的指向及重置暂存区，但是不改变工作区       
+> git reset --soft [commitID]，只更改引用的指向，不改变暂存区和工作区。    
+> git reset --mixed [commitID]或git reset [commitID](默认)，更改引用的指向及重置暂存区，但是不改变工作区。           
 
 ### 修改分支名
 ```
