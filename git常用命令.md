@@ -47,7 +47,7 @@ git branch -v
 
   已`master`合并`release`分支为例，合并release后，merge形式的合并在master上会作为一个commit（即与master一条线）
   
-  ![merge1](./file/merge1.png)
+  ![merge](./file/merge.png)
   
   但是`--no-ff`形式的合并在master上不会作为一个commit（即不与master一条线），但会产生新的合并点。
   
