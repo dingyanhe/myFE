@@ -1,9 +1,5 @@
 copy from [here](https://gist.github.com/guweigang/9848271)
 
-// 骚操作来了
-git branch -vv 可以用它来查看关联
-
-
 git init                                                  # 初始化本地git仓库（创建新仓库）
 git config --global user.name "xxx"                       # 配置用户名
 git config --global user.email "xxx@xxx.com"              # 配置邮件
@@ -59,7 +55,8 @@ git checkout -- README                                    # 检出head版本的R
 git merge origin/master                                   # 合并远程master分支至当前分支
 git cherry-pick ff44785404a8e                             # 合并提交ff44785404a8e的修改
 git push origin master                                    # 将当前分支push到远程master分支
-git push origin :hotfixes/BJVEP933                        # 删除远程仓库的hotfixes/BJVEP933分支
+git push origin dev:master				# 将本地的dev分支推送到origin仓库的master分支上
+git push origin :hotfixes/BJVEP933                        # (将空分支推送替换origin分支的hotfixes/BJVEP933)，删除远程仓库的hotfixes/BJVEP933分支
 git push --tags                                           # 把所有tag推送到远程仓库
 git fetch                                                 # 获取所有远程分支（不更新本地分支，另需merge）
 git fetch --prune                                         # 获取所有原创分支并清除服务器上已删掉的分支
@@ -77,7 +74,7 @@ git revert dfb02e6e4f2f7b573337763e5c0013802e392818       # 撤销提交dfb02e6e
 git ls-tree HEAD                                          # 内部命令：显示某个git对象
 git rev-parse v2.0                                        # 内部命令：显示某个ref对于的SHA1 HASH
 git reflog                                                # 显示所有提交，包括孤立节点
-git show HEAD@{5}
+git show HEAD@{5}git
 git show master@{yesterday}                               # 显示master分支昨天的状态
 git log --pretty=format:'%h %s' --graph                   # 图示提交日志
 git show HEAD~3
