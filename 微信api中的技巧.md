@@ -33,12 +33,14 @@ wx.setStorage({
 })
 ```
 ```javascript
-wx.getStorage({
-  key: 'key',
-  success: function(res) {
-      console.log(res.data)
-  } 
-})
+onReady: function(){
+ wx.getStorage({
+   key: 'key',
+   success: function(res) {
+       console.log(res.data)
+   } 
+ });
+}
 ```
 
 
