@@ -43,9 +43,35 @@ onReady: function(){
 }
 ```
 
+### request的请求数量限制了10个
+ 微信提供了说明看[这里][api_network]
+```
+// 发起请求后要
+onLoad() {
+ const req = wx.request({
+  url: 'test.php', //仅为示例，并非真实的接口地址
+  data: {
+     x: '' ,
+     y: ''
+  },
+  header: {
+      'content-type': 'application/json' // 默认值
+  },
+  success: function(res) {
+    console.log(res.data)
+  }
+});
+// 销毁
+onUnLoad() {
+ req.abort(); // 取消请求任务
+}
+}
+```
 
 ------------------------------
 [yy_store]:http://www.wxapp-union.com/article-3101-1.html '微信小程序商城开发--注意要点'
 [api_choose_dress]:https://developers.weixin.qq.com/miniprogram/dev/api/address.html#wxchooseaddressobject '微信官方api收货地址'
 [api_navigate-to]:https://developers.weixin.qq.com/miniprogram/dev/api/ui-navigate.html '微信官方最多跳10栈页面'
 [api_storage]:https://developers.weixin.qq.com/miniprogram/dev/api/data.html '微信数据缓存'
+[api_network]:https://developers.weixin.qq.com/miniprogram/dev/api/api-network.html '微信api网络请求'
+
