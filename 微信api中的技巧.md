@@ -25,8 +25,21 @@ Page({
 ```
 
 2.本地存储:微信有提供这个api: 数据缓存,[在这里][api_storage]
-
-
+示例代码:
+```javascript
+wx.setStorage({
+  key:"key",
+  data:"value"
+})
+```
+```javascript
+wx.getStorage({
+  key: 'key',
+  success: function(res) {
+      console.log(res.data)
+  } 
+})
+```
 
 
 ------------------------------
